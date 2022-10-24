@@ -4,9 +4,12 @@ I'll update later
 [Kaggle Notebook](https://www.kaggle.com/code/bomaich/boeing-stock-price-prediction)
 
 # TABLE OF CONTENTS
-* [1. INTRODUCTION](#1-INTRODUCTION)
+* [INTRODUCTION](#INTRODUCTION)
+* [PROBLEMS](#PROBLEMS)
+* [SCOPE](#SCOPE)
+* [CONCLUSION](#CONCLUSION)
 
-# 1 INTRODUCTION
+# INTRODUCTION
 
 I suppose you may have thought about utilizing ML/AI to forecast stock price at some point. That was, in fact, my fantasy when I was a freshman in college. I set out to create a model to forecast them back then and wanted to live a prosperous life for the rest of my days. But I ran into trouble.
 
@@ -16,7 +19,8 @@ I suppose you may have thought about utilizing ML/AI to forecast stock price at 
 
 Even though I have found solutions to all of the aforementioned issues, I am currently unable to pay my rent :)).  Just try, even if we can't make a dream come true.
 
-## Problems
+# PROBLEMS
+
 I started to read papers and searching for the code on Kaggle. And I found this Note book: [📊Stock Market Analysis 📈 + Prediction using LSTM](https://www.kaggle.com/code/faressayah/stock-market-analysis-prediction-using-lstm/notebook). In general, the visualization was really good. Nevertheless, the APPLE stock prediction was wrong (The model is simply predict by mimicking the price of the day before). And I found that a lot of people make the same mistakes. 
 
 1. Using the close price only (this feature has a normal distribution which is almost random)
@@ -30,7 +34,7 @@ You can see more with [LSTM time series + stock price prediction = FAIL](https:/
 
 However, instead of predicting price, some papers are trying to solve the classification task (Buy, Sell, Keep) with the given information to optimize the value. Or they tried to applied other models to solve this task (CNN, CNN+LSTM, GAN...)
 
-## Scope
+# SCOPE
 
 It goes without saying that there are several issues to address and  methods to tackle this task in a single notebook. I think a whole system is required. I'll attempt to address a few minor problems in this notebook, which you are welcome to use as a reference. Along the way, we'll be tackling the following issues:
 
@@ -48,3 +52,24 @@ The models I used in this notebook are
 * [Complex CNN](#3.7.3-Complex-CNN)
 * [CNN + LSTM](#3.7.4-CNN-+-LSTM)
 * [LSTM + Dense](#3.7.5-LSTM-+-Dense)
+
+# CONCLUSION
+
+Look at the pictures below, we can see that in general, when we increase the input_width and OUT_STEPS. 
+* The MAE and RMSE increase. It shows that the predictions are more related to recent data. Furthermore,  
+* Multi LSTM model errors in test data are higher than validation data (The window size can solve overfitting??)
+* One exception is CNN+LSTM model. The errors increase. I still don't know why more complicated models achieve worse results than simple ones (the simple CNN which has just 1 Conv layer/use the last 3 time steps) gain outstanding performance
+
+<p align="center"><img src="doc/GUI.png" width="500"></p>
+<p align="center"><i>Figure 2. input_width = 10,  OUT_STEPS = 5 </i></p>
+
+input_width = 10,  OUT_STEPS = 5
+input_width = 10,  OUT_STEPS = 5
+
+![image.png](attachment:4e183734-e2bc-426c-94c5-c8d3c8e3f8aa.png)
+
+input_width = 20,  OUT_STEPS = 10
+
+<p align="center"><img src="doc/GUI.png" width="500"></p>
+<p align="center"><i>Figure 2. GUI </i></p>
+
