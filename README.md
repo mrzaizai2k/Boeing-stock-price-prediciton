@@ -60,16 +60,9 @@ Look at the pictures below, we can see that in general, when we increase the inp
 * Multi LSTM model errors in test data are higher than validation data (The window size can solve overfitting??)
 * One exception is CNN+LSTM model. The errors increase. I still don't know why more complicated models achieve worse results than simple ones (the simple CNN which has just 1 Conv layer/use the last 3 time steps) gain outstanding performance
 
-<p align="center"><img src="doc/GUI.png" width="500"></p>
-<p align="center"><i>Figure 2. input_width = 10,  OUT_STEPS = 5 </i></p>
+<p align="center"><img src="doc/input_width = 10 OUT_STEPS = 5.png" width="500"></p>
+<p align="center"><i>Figure. input_width = 10,  OUT_STEPS = 5 </i></p>
 
-input_width = 10,  OUT_STEPS = 5
-input_width = 10,  OUT_STEPS = 5
-
-![image.png](attachment:4e183734-e2bc-426c-94c5-c8d3c8e3f8aa.png)
-
-input_width = 20,  OUT_STEPS = 10
-
-<p align="center"><img src="doc/GUI.png" width="500"></p>
-<p align="center"><i>Figure 2. GUI </i></p>
+<p align="center"><img src="doc/input_width = 20 OUT_STEPS = 10.png" width="500"></p>
+<p align="center"><i>Figure. input_width = 20,  OUT_STEPS = 10 </i></p>
 
